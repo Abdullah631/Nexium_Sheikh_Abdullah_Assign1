@@ -15,14 +15,13 @@ import { QuoteList } from "./quoteList";
 import { useState } from "react";
 import { quotes } from "@/data/quotes";
 
-
-
 interface FormValues {
   topic: string;
 }
 
 export function QuoteForm() {
   const [result, setResult] = useState<typeof quotes>([]);
+  const [hasSubmitted, setHasSubmitted] = useState(false);
 
   const form = useForm<FormValues>({
     defaultValues: { topic: "" }
@@ -33,6 +32,7 @@ export function QuoteForm() {
       .filter(q => q.topic.toLowerCase().includes(data.topic.toLowerCase()))
       .slice(0, 3);
     setResult(filtered);
+    setHasSubmitted(true);
   };
 
   return (
@@ -55,7 +55,7 @@ export function QuoteForm() {
           <Button type="submit">Get Quotes</Button>
         </form>
       </Form>
-      <QuoteList quotes={result} />
+      <QuoteList quotes={result} hasSubmitted={hasSubmitted} />
     </div>
   );
 }

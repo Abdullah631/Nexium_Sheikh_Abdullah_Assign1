@@ -5,12 +5,15 @@ interface Quote {
 
 interface Props {
   quotes: Quote[];
+  hasSubmitted: boolean;
 }
 
-export function QuoteList({ quotes }: Props) {
-  if (quotes.length === 0) {
+export function QuoteList({ quotes, hasSubmitted }: Props) {
+  if (hasSubmitted && quotes.length === 0) {
     return <p className="text-gray-500">No quotes found for this topic.</p>;
   }
+
+  if (quotes.length === 0) return null;
 
   return (
     <ul className="space-y-4">
