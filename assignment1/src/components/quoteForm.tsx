@@ -19,6 +19,8 @@ interface FormValues {
   topic: string;
 }
 
+const categories = ["Success", "Courage", "Motivation", "Bravery", "Love", "Romance", "Sad","Nature","Leadership","Inspirational"];
+
 export function QuoteForm() {
   const [result, setResult] = useState<typeof quotes>([]);
   const [hasSubmitted, setHasSubmitted] = useState(false);
@@ -35,8 +37,28 @@ export function QuoteForm() {
     setHasSubmitted(true);
   };
 
+  const handleCategoryClick = (category: string) => {
+    form.setValue("topic", category);
+    onSubmit({ topic: category });
+  };
+
   return (
     <div className="max-w-xl mx-auto space-y-6 mt-10">
+      {/*Buttons For Quick Quotes*/}
+      <div className="flex flex-wrap gap-2 justify-center">
+        {categories.map((cat) => (
+          <Button
+            key={cat}
+            type="button"
+            variant="outline"
+            onClick={() => handleCategoryClick(cat)}
+            className="capitalize"
+          >
+            {cat}
+          </Button>
+        ))}
+      </div>
+      {/*Form For Inputting type of Qoutes*/}
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
           <FormField
@@ -55,7 +77,9 @@ export function QuoteForm() {
           <Button type="submit">Get Quotes</Button>
         </form>
       </Form>
+      {/* Display of Qoutes */}
       <QuoteList quotes={result} hasSubmitted={hasSubmitted} />
     </div>
   );
 }
+export default QuoteForm;
