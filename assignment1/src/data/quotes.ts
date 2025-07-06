@@ -8,7 +8,6 @@ export const quotes = [
   { text: "Believe in yourself and all that you are.", topic: "motivation" },
   { text: "Push yourself, because no one else is going to do it for you.", topic: "motivation" },
   { text: "The only limit to our realization of tomorrow is our doubts of today.", topic: "motivation" },
-
   // Courage
   { text: "Do one thing every day that scares you.", topic: "courage" },
   { text: "Fear is temporary. Regret is forever.", topic: "courage" },
