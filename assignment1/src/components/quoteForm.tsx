@@ -47,15 +47,14 @@ export function QuoteForm() {
       {/*Buttons For Quick Quotes*/}
       <div className="flex flex-wrap gap-2 justify-center">
         {categories.map((cat) => (
-          <Button
+          <button
             key={cat}
             type="button"
-            variant="outline"
             onClick={() => handleCategoryClick(cat)}
-            className="capitalize"
+            className="btn btn-soft btn-primary"
           >
             {cat}
-          </Button>
+          </button>
         ))}
       </div>
       {/*Form For Inputting type of Qoutes*/}

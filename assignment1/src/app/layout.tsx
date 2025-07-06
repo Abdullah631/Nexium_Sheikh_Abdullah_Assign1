@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Quote Generator",
-  description: "Created By Sheikh Abdullah",
+  description: "A basic Application that generates basic qoutes.",
 };
 
 export default function RootLayout({
