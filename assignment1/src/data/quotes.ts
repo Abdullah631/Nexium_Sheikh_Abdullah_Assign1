@@ -37,5 +37,15 @@ export const quotes = [
   // Sad
   { text: "Tears come from the heart and not from the brain.", topic: "sad" },
   { text: "Every human walks around with a certain kind of sadness.", topic: "sad" },
-  { text: "The word 'happy' would lose its meaning if it were not balanced by sadness.", topic: "sad" }
+  { text: "The word 'happy' would lose its meaning if it were not balanced by sadness.", topic: "sad" },
+
+  // Leadership
+  {text:"A leader is one who knows the way, goes the way, and shows the way.",topic:"leadership"},
+  {text:"Leadership is not about being in charge. It is about taking care of those in your charge.",topic:"leadership"},
+  {text:"The greatest leader is not necessarily the one who does the greatest things. He is the one that gets people to do the greatest things.",topic:"leadership"},
+
+  // Inspirational
+  {text:"Believe you can and you're halfway there.",topic:"inspirational"},
+  {text:"Start where you are. Use what you have. Do what you can.",topic:"inspirational"},
+  {text:"The only limit to our realization of tomorrow is our doubts of today.",topic:"inspirational"}
 ];
